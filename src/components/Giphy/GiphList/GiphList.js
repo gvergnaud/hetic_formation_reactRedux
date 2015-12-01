@@ -1,5 +1,6 @@
 import React, { PropTypes } from 'react'
 
+import './GiphList.less'
 
 const GiphList = ({ giphs }) => (
   <div className="GiphList">
@@ -13,7 +14,7 @@ const Giph = ({ images }) => {
   const { url, height, width } = images.fixed_height
 
   return (
-    <div className="GiphList-item">
+    <div className="GiphList-item" style={{width, height}}>
       <img src={url} width={width} height={height} />
     </div>
   )

@@ -9,6 +9,9 @@ const initialState = []
 export default function giphsReducer(state = initialState, action) {
 
   switch (action.type) {
+    case GIPHY_FETCH_REQUEST:
+      return []
+
     case GIPHY_FETCH_SUCCESS:
       return [
         ...state,

@@ -1,10 +1,19 @@
 import React, { Component, PropTypes } from 'react'
+import UIButton from '../../UIButton/'
 
+import './GiphySearchBar.less'
 
 class GiphySearchBar extends Component {
 
   static propTypes = {
     onFetchGiphs: PropTypes.func.isRequired
+  }
+
+  constructor(props) {
+    super(props)
+    this.state = {
+      isInputEmpty: true
+    }
   }
 
   _handleSubmit = (e) => {
@@ -18,8 +27,14 @@ class GiphySearchBar extends Component {
 
   render() {
     return (
-      <form onSubmit={this._handleSubmit}>
-        <input type="text" ref="input" />
+      <form
+        className="GiphySearchBar"
+        onSubmit={this._handleSubmit}>
+        <input
+          className="GiphySearchBar-input"
+          type="text"
+          ref="input" />
+        <UIButton onClick={this._handleSubmit}>Search</UIButton>
       </form>
     )
   }
